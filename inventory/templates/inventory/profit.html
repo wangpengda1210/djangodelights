@@ -1,0 +1,10 @@
+{% extends 'inventory/base.html' %}
+
+{% block title %}Profit{% endblock %}
+
+{% block content %}
+    <h2>Profit</h2>
+    <p style="color: red">Total Cost: ${{ total_cost | stringformat:".2f" }}</p>
+    <p style="color: green">Total Revenue: ${{ revenue | stringformat:".2f" }}</p>
+    <p style="color: blue">Total Profit: ${{ profit | stringformat:".2f" }}</p>
+{% endblock %}

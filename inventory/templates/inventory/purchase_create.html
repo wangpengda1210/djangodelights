@@ -1,0 +1,19 @@
+{% extends 'inventory/base.html' %}
+{% block title %}Record New Purchase{% endblock %}
+
+{% block content %}
+<h2>Record New Purchase</h2>
+<hr/>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <label for="menu_item">Menu item: </label>
+    <select name="menu_item" id="menu_item" required>
+        <option value selected>----------</option>
+        {% for item in menu_items %}
+            <option value="{{ item.id }}">{{ item.title }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}

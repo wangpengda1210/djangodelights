@@ -1,0 +1,12 @@
+{% extends 'inventory/base.html' %}
+{% block title %}Add New Item to Menu{% endblock %}
+
+{% block content %}
+<h2>Add New Item to Menu</h2>
+<hr/>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}
